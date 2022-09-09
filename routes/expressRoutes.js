@@ -2,8 +2,8 @@ const UserController = require("../controllers/user_controller");
 
 
 async function buildExpressRoutes(app, options) {
-    const {dataAdapter} = options;
-    const userController = UserController({dataAdapter});
+    const {readDataAdapter, writeDataAdapter} = options;
+    const userController = UserController({readDataAdapter, writeDataAdapter});
     app.post("/create", async(req, res) => {
                                     const response = await userController.postUser(req, res);
                                     res.send(response);

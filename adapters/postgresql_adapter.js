@@ -8,12 +8,15 @@ function postgresqlAdapter() {
     }
 
     const findAll = async () => {
-        return _conn.query("select * from users");
+        console.log("simulating a bunch of results returning.....");
+        return [{username: "asdf", password: "1234"}, {username: "qwer", password: "1233"}]
+        //return _conn.query("select * from users");
     }
 
     const addUser = async (user) => {
         const {username, password} = user;
-        _conn.query("insert into users (username, password) values ($1, $2)", [username, password]);
+        console.log("I've ordered to write these", username, password);
+        //_conn.query("insert into users (username, password) values ($1, $2)", [username, password]);
     }
 
     return {
