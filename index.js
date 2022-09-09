@@ -9,7 +9,7 @@ const opts = {
     writeDataAdapter: postgresqlAdapter(),
 };
 
-//const server = fastifyAdapter(opts);
-const server = expressAdapter(opts);
+const server = fastifyAdapter(opts);
+//const server = expressAdapter(opts);
 server.start();
 
