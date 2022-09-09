@@ -15,4 +15,10 @@ function postgresqlAdapter() {
         const {username, password} = user;
         _conn.query("insert into users (username, password) values ($1, $2)", [username, password]);
     }
+
+    return {
+        findAll, addUser
+    }
 }
+
+module.exports = postgresqlAdapter;
