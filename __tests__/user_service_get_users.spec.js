@@ -19,7 +19,7 @@ const mockRepo = {
 describe("Get Users", () => {
     test("it should return 2 values", async () => {
         const userService = UsersService(mockRepo);
-        const userList = await userService.getUsers();
+        const userList = await userService.findAll();
         expect(userList.length).toEqual(2);
     });
 
@@ -28,7 +28,7 @@ describe("Get Users", () => {
         const userService = UsersService(mockRepo);
         await userService.addUser(user);
 
-        const users = await userService.getUsers();
+        const users = await userService.findAll();
         const addedUser = users.filter(u => u.username == user.username && u.password == user.password);
         expect(addedUser.length).toEqual(1);
     });
