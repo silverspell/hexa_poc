@@ -3,10 +3,12 @@ const fastifyAdapter = require("./adapters/fastify_adapter");
 const expressAdapter = require('./adapters/express_adapter');
 const postgresqlAdapter = require("./adapters/postgresql_adapter");
 
+
+const nonCQRSDataAdapter = inMemoryDbAdapter();
 const opts = {
     port: 3000,
-    readDataAdapter: inMemoryDbAdapter(),
-    writeDataAdapter: postgresqlAdapter(),
+    readDataAdapter: nonCQRSDataAdapter,
+    writeDataAdapter: nonCQRSDataAdapter
 };
 
 const server = fastifyAdapter(opts);

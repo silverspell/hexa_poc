@@ -3,7 +3,7 @@ const userBuilder = require("../entities/user");
 
 function UsersService(userRepository) {
 
-    async function getUsers() {
+    async function findAll() {
         return await userRepository.findAll();
     }
 
@@ -16,9 +16,14 @@ function UsersService(userRepository) {
         }
     }
 
+    async function aLongRunningRequest() {
+        setTimeout(() => console.log("Long running processes done"), 5000);
+    }
+
     return {
-        getUsers,
-        addUser
+        findAll,
+        addUser,
+        aLongRunningRequest
     }
 }
 

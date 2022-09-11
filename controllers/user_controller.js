@@ -12,8 +12,13 @@ function UserController({readDataAdapter, writeDataAdapter}) {
         return {msg: "OK", status: 0, result};
     }
 
+    const longRunner = async(req, res) => {
+        const bus = await execute({commandName: "LONG_RUNNING_EVENT", source: req.body, dataAdapter: writeDataAdapter});
+        return {msg: "OK", status: 0};
+    }
+
     return {
-        postUser, listUsers
+        postUser, listUsers, longRunner
     }
 }
 
