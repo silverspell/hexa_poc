@@ -32,7 +32,7 @@ Adaptörlerin wraplemek zorunda olduğu, 3rd parti ekipler ile el sıkışılan 
 ## TODO
 
 - Config ve infrastructure katmanlarını belirgin hale getirmek
-- Cross cutting concerns 
+- ~~Cross cutting concerns~~
 - Functional test örnekleri gerçekleştirmek.
-- Async yapılar için EventEmitter
+- ~~Async yapılar için EventEmitter~~
 - Swagger ?
